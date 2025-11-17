@@ -1,7 +1,7 @@
-// components/IntroSection.tsx
+// components/IntroCard.tsx
 import React from "react";
 
-const IntroSection: React.FC = () => {
+const IntroCard: React.FC = () => {
   return (
     <section id="about" className="intro">
       <div className="container">
@@ -14,7 +14,7 @@ const IntroSection: React.FC = () => {
               </div>
               <div className="inner-right">
                 <img
-                  src="assets/"
+                  src="/assets/image/IMG_9873.jpg"
                   alt="Picture"
                   className="avatar"
                 />
@@ -27,4 +27,4 @@ const IntroSection: React.FC = () => {
   );
 };
 
-export default IntroSection;
+export default IntroCard;

@@ -1,39 +1,49 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [theme, setTheme] = useState("light");
 
-  // Load theme từ localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
+    document.body.classList.toggle("dark", savedTheme === "dark");
   }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
+    document.body.classList.toggle("dark", newTheme === "dark");
     localStorage.setItem("theme", newTheme);
   };
 
   return (
     <header className="header">
       <div className="container header-inner">
+        {/* Logo */}
         <a href="#top" className="logo-page-link">
-          <img src="../assets/image/Logo.png" alt="Logo" className="logo-img" /> LEAF
+          <Image
+            src="/assets/image/Logo.png"
+            alt="Logo"
+            width={40}      // chiều rộng logo
+            height={40}     // chiều cao logo
+          />
+          LEAF
         </a>
 
+        {/* Navigation */}
         <nav className="navA">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
-        </nav>
-
-        <button className="theme-toggle" onClick={toggleTheme}>
+          <button className="theme-btn" onClick={toggleTheme}>
           {theme === "light" ? "🌙" : "☀️"}
         </button>
+        </nav>
+
+        {/* Theme Toggle */}
+        
       </div>
     </header>
   );

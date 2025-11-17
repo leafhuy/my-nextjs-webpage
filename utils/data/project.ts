@@ -1,14 +1,21 @@
-export const projects = [
+export interface Project {
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+export const projects: Project[] = [
   {
-    title: "Project 1",
-    description: "This is the description of project 1",
-    image: "/image/project1.png",
-    link: "#"
+    name: "12V Solenoid Password Lock",
+    description: "Simple 12V solenoid lock with passwords using AVR microcontroller",
+    image: "/assets/image/IMG_20250626_133257.jpg",
+    link: "https://github.com/leafhuy/DigitallockbaseCode",
   },
   {
-    title: "Project 2",
-    description: "This is the description of project 2",
-    image: "/image/project2.png",
-    link: "#"
+    name: "SATELLITE GROUND STATION",
+    description: "Receiving realtime data from satellite using SDR system.",
+    image: "/assets/image/ami_rgb_Clean_Longwave_IR_Window_Band_map.png",
+    link: "https://github.com/leafhuy/SatelliteProject",
   },
 ];
