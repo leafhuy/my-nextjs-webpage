@@ -19,5 +19,3 @@ export const projects: Project[] = [
     link: "https://github.com/leafhuy/SatelliteProject",
   },
 ];
-
-export default Project;

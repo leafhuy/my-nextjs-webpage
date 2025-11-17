@@ -2,10 +2,10 @@
 import Header from "./components/header";
 import Footer from "./components/footer";
 import ProjectCard from "./components/body/ProjectCard";
-import { projects } from "../utils/data/project";
+import { projects } from "./components/body/utils/data/project";
 import Contact from "./components/body/Contact";
 import IntroCard from "./components/body/IntroCard";
-import Image from "next/image";
+
 export default function Page() {
   return (
     <>
